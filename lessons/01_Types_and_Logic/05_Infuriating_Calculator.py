@@ -22,19 +22,29 @@ you can ask for a string with simpledialog.askstring().
 """
 
 # Import the required modules
-
+from tkinter import Tk, messagebox, simpledialog
 # Create a window object
-
+window = Tk()
 # Hide the window, hint: use the withdraw method
-
+window.withdraw()
 # Ask the user for the first number   
-
+num1 = simpledialog.askinteger(None, prompt="What is the first number you would like?")
 # Ask the user for the second number
-
+num2 = simpledialog.askinteger(None, prompt="What is the second number you would?")
 # Ask the user for the math operation
-
+operation = simpledialog.askstring(None, prompt = "Would you like to add, subtract, multiply, or divide these two number.")
 # Use if-elif-else statements to provide the desired math operation on the numbers and display the result.
-
+if operation == "add":
+    answer = num1 + num2
+elif operation == "subtract":
+    answer = num1 - num2
+elif operation == "multiply":
+    answer = num1 * num2
+elif operation == "divide":
+    answer = num1/num2
+else:
+    messagebox.showerror
+messagebox.showinfo(None, message = "The answer to the operation is " + str(answer))
 # If the user enters an unknown operation, display an error message. ( use messagebox.showerror()
 
 # Keep the window open
